@@ -17,8 +17,17 @@ kalshiapi.py:
 It can be used to check the information of different series,event,markets,check the infromation of the loged-in account. It can also be used to create orders
 -------------------------------------------------------------
 predictor.py:
-The TemperaturePredictorclass provides functionalities to predict temperature based on the provided dataset using the XGBoost algorithm.
-Functions includes training the model, evaluate the model, visualize the output plot scatter graphs of prediction vs. groud truth ,prediction based on provided data.
+The TemperaturePredictor class provides functionalities to predict temperature based on the Open-Meteo
+dataset using a Random Forest regression model. Functions include training, evaluation, model
+serialization, and next-day prediction.
+-----------------------------------------------------------
+main.py:
+Command-line entry point to train, evaluate, and predict the next day's max temperature using the
+Open-Meteo historical dataset stored in the repo. Example usage:
+
+    python predicttemp/main.py --train --evaluate --predict
+
+The model is saved under models/temperature_predictor.joblib by default.
 -----------------------------------------------------------
 source_ensemble.py:
 In thsi model, I gathered prediction data from other predictors as the input of the model.
@@ -45,4 +54,3 @@ Prerequisites: Python 3
 Contact:
 chengeng liu
 lcg518@bu.edu
-
